@@ -207,7 +207,8 @@ class TriggerExactMatch(Trigger):
 
     def getFilenameMatches(self, directoryContents):
         if self.pattern in directoryContents:
-            return self.pattern
+            return [self.pattern]
+        return []
 
 class TriggerCaseInsensitiveMatch(Trigger):
     '''
@@ -218,7 +219,7 @@ class TriggerCaseInsensitiveMatch(Trigger):
     def getFilenameMatches(self, directoryContents):
         for item in directoryContents:
             if item.lower() == self.pattern:
-                return item
+                return [item]
         return []
 
 

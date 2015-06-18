@@ -140,7 +140,6 @@ class WatchMan(multiprocessing.Process):
                         )
                     )
                     continue
-
                 if canMatchMultiple is False:
                     remainingContents = remainingContents.difference(matches)
                 else:

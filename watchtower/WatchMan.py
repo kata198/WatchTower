@@ -170,7 +170,7 @@ class WatchMan(multiprocessing.Process):
                         trigger.runAction(match, data)
                     except Exception as e:
                         # TODO: retries?
-                        sys.stderr.write('Error handling action %s on %s. Data was: %s. Deleting task.\n%s\n' %(trigger.__class.__name__, match, str(data)), traceback.format_exc(sys.exc_info()))
+                        sys.stderr.write('Error handling action %s on %s. Data was: %s. Deleting task.\n%s\n' %(trigger.__class__.__name__, match, str(data), traceback.format_exc(sys.exc_info())))
 
                     # If multiple matches per round is allowed, don't remove here.
                     if self.canMatchMultiple is True:

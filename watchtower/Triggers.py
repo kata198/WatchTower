@@ -14,7 +14,7 @@ from .Action import Action
 try:
     # python 2
     StringTypes = types.StringTypes
-except NameError:
+except:
     # python 3
     StringTypes = (str,)
 
